@@ -21,12 +21,21 @@ struct LandmarkList: View {
             // making your data type conform to the Identifiable protocol
             // if the object does not conform to the identifiable, you need to
             // put this in the constructor: , id: \.id
-            List(landmarkData) { landmark in
-                // this applies a filter of the state or the iterables property to show
-                // or hide the item
-                if(!self.showFavoritesOnly || landmark.isFavorite){
-                    NavigationLink(destination: LandmarkDetail(landmark: landmark)){
-                        LandmarkRow(landmark: landmark)
+            List{
+                Toggle(isOn: $showFavoritesOnly){
+                    Text("Favorites only")
+                }
+                
+                // lists are used to group dynamic data together
+                // by using one with a ForEach we are able to group dynamic data
+                // with static data in an organized way
+                ForEach(landmarkData){ landmark in
+                    // this applies a filter of the state or the iterables property to show
+                    // or hide the item
+                    if(!self.showFavoritesOnly || landmark.isFavorite){
+                        NavigationLink(destination: LandmarkDetail(landmark: landmark)){
+                            LandmarkRow(landmark: landmark)
+                        }
                     }
                 }
             }.navigationBarTitle(Text("Landmarks"))
