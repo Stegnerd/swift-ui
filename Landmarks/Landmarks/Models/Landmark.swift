@@ -10,7 +10,8 @@ import CoreLocation
 
 // Hashable means this model abides to the proctocol for hashing (a method gets auto genrated)
 // Codable (shorthand for encodable and decodable) json serialization
-struct Landmark: Hashable, Codable {
+// Identifiable means that it can be used in iteration of lists
+struct Landmark: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
     fileprivate var imageName: String
