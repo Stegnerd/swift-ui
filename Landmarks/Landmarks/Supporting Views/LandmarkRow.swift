@@ -25,6 +25,12 @@ struct LandmarkRow: View {
 struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
         // you can access a json object just by referencing the file
-        LandmarkRow(landmark: landmarkData[0])
+        // you can also tweak the preview without messing with the real object
+        // you can also choose to display multiple object
+        Group {
+            LandmarkRow(landmark: landmarkData[0])
+            LandmarkRow(landmark: landmarkData[1])
+        }
+        .previewLayout(.fixed(width: 300, height: 70))
     }
 }
