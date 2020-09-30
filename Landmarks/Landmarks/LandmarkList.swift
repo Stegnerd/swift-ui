@@ -28,6 +28,13 @@ struct LandmarkList: View {
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkList()
+        // to adhere to identifiable protocol must specify unique property for
+        // each item in the list, since these are unique strings, you can just use
+        // the self to mean the string.
+        ForEach(["iPhone SE", "iPhone XS Max"], id: \.self){ deviceName in
+            LandmarkList().previewDevice(PreviewDevice(rawValue: deviceName))
+        }
+        
+        
     }
 }
