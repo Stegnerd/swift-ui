@@ -22,6 +22,7 @@ struct LandmarkList: View {
             // if the object does not conform to the identifiable, you need to
             // put this in the constructor: , id: \.id
             List{
+                // you can use the $ to access a binding to a state variable/ or its props
                 Toggle(isOn: $showFavoritesOnly){
                     Text("Favorites only")
                 }
