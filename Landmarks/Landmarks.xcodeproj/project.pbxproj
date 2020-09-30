@@ -31,6 +31,7 @@
 		E75F03B62521833B00AEB2B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75F03B52521833B00AEB2B1 /* SceneDelegate.swift */; };
 		E75F03BC2521840200AEB2B1 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75F03BB2521840200AEB2B1 /* Landmark.swift */; };
 		E75F03C02521841100AEB2B1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75F03BF2521841100AEB2B1 /* Data.swift */; };
+		E79A84E525254C26000C1843 /* charleyrivers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E79A84E425254C26000C1843 /* charleyrivers.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		E75F03B52521833B00AEB2B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E75F03BB2521840200AEB2B1 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		E75F03BF2521841100AEB2B1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E79A84E425254C26000C1843 /* charleyrivers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = charleyrivers.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		E75F03962521822B00AEB2B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E79A84E425254C26000C1843 /* charleyrivers.jpg */,
 				E7209F9B252401A600B5B147 /* landmarkData.json */,
 				E75F039C2521825900AEB2B1 /* chilkoottrail.jpg */,
 				E75F03A22521825900AEB2B1 /* chincoteague.jpg */,
@@ -213,6 +216,7 @@
 				E75F03AE2521825900AEB2B1 /* silversalmoncreek.jpg in Resources */,
 				E75F03AC2521825900AEB2B1 /* rainbowlake.jpg in Resources */,
 				E75F03A82521825900AEB2B1 /* lakemcdonald.jpg in Resources */,
+				E79A84E525254C26000C1843 /* charleyrivers.jpg in Resources */,
 				E75F03A92521825900AEB2B1 /* chilkoottrail.jpg in Resources */,
 				E75F03A72521825900AEB2B1 /* umbagog.jpg in Resources */,
 				E75F03A52521825900AEB2B1 /* turtlerock.jpg in Resources */,

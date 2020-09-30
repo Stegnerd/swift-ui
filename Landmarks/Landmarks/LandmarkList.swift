@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct LandmarkList: View {
+    // this is like react state that affects the view overtime
+    @State var showFavoritesOnly = false
+    
+    
     var body: some View {
         
         NavigationView {
@@ -18,8 +22,12 @@ struct LandmarkList: View {
             // if the object does not conform to the identifiable, you need to
             // put this in the constructor: , id: \.id
             List(landmarkData) { landmark in
-                NavigationLink(destination: LandmarkDetail(landmark: landmark)){
-                    LandmarkRow(landmark: landmark)
+                // this applies a filter of the state or the iterables property to show
+                // or hide the item
+                if(!self.showFavoritesOnly || landmark.isFavorite){
+                    NavigationLink(destination: LandmarkDetail(landmark: landmark)){
+                        LandmarkRow(landmark: landmark)
+                    }
                 }
             }.navigationBarTitle(Text("Landmarks"))
         }
@@ -28,13 +36,6 @@ struct LandmarkList: View {
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
-        // to adhere to identifiable protocol must specify unique property for
-        // each item in the list, since these are unique strings, you can just use
-        // the self to mean the string.
-        ForEach(["iPhone SE", "iPhone XS Max"], id: \.self){ deviceName in
-            LandmarkList().previewDevice(PreviewDevice(rawValue: deviceName))
-        }
-        
-        
+            LandmarkList()
     }
 }
