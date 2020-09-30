@@ -19,7 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: LandmarkDetail())
+            // this defines the starting point for the simulator when running
+            // stand alone
+            window.rootViewController = UIHostingController(rootView: LandmarkList())
             self.window = window
             window.makeKeyAndVisible()
         }

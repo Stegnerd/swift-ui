@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
+    var landmark: Landmark
+    
     var body: some View {
         VStack {
-            MapView()
+            MapView(coordinate: landmark.locationCoordinate)
                 // allows to bleed into top beside camera bump
                 .edgesIgnoringSafeArea(.top)
                 // when you specify only the height it automatically does the width
@@ -19,31 +21,32 @@ struct LandmarkDetail: View {
             // To layer image on top of something
             // give the image a negative offset vertically
             // and padding on the bottom
-            CircleImage()
+            CircleImage(image: landmark.image)
                 // (pulls the image up out of its boundaries)
                 .offset(y: -130)
                 // (pulls what ever is below into boundaries)
                 .padding(.bottom, -130)
             
             VStack(alignment: .leading) {
-                Text("Turtle Rock")
+                Text(landmark.name)
                     .font(.title)
                 HStack {
-                    Text("Joshua Tree National Park")
+                    Text(landmark.park)
                         .font(.subheadline)
                     Spacer()
-                    Text("California")
+                    Text(landmark.state)
                         .font(.subheadline)
                 }
             }.padding()
             // this pushed everything to the top
             Spacer()
         }
+        .navigationBarTitle(Text(landmark.name), displayMode: .inline)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetail()
+        LandmarkDetail(landmark: landmarkData[0])
     }
 }
