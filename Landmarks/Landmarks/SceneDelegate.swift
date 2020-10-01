@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             // this defines the starting point for the simulator when running
             // stand alone
-            window.rootViewController = UIHostingController(rootView: LandmarkList())
+            window.rootViewController = UIHostingController(rootView: LandmarkList().environmentObject(UserData()))
             self.window = window
             window.makeKeyAndVisible()
         }

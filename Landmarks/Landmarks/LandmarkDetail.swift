@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
+    @EnvironmentObject var userData: UserData
     var landmark: Landmark
+    
+    var landmarkIndex: Int {
+        // $0 is like kotlin it
+        userData.landmarks.firstIndex(where: {$0.id == landmark.id})!
+    }
     
     var body: some View {
         VStack {

@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct LandmarkList: View {
+    
+    @EnvironmentObject var userData: UserData
+    
     // this is like react state that affects the view overtime
-    @State var showFavoritesOnly = false
+    // this was traded out for an global object, but this is a way to watch things locally
+    //@State var showFavoritesOnly = false
     
     
     var body: some View {
@@ -22,18 +26,18 @@ struct LandmarkList: View {
             // if the object does not conform to the identifiable, you need to
             // put this in the constructor: , id: \.id
             List{
-                // you can use the $ to access a binding to a state variable/ or its props
-                Toggle(isOn: $showFavoritesOnly){
+                // you can use the $ to access a binding to a state/EnvironmentObject variable/ or its props
+                Toggle(isOn: $userData.showFavoritesOnly){
                     Text("Favorites only")
                 }
                 
                 // lists are used to group dynamic data together
                 // by using one with a ForEach we are able to group dynamic data
                 // with static data in an organized way
-                ForEach(landmarkData){ landmark in
+                ForEach(userData.landmarks){ landmark in
                     // this applies a filter of the state or the iterables property to show
                     // or hide the item
-                    if(!self.showFavoritesOnly || landmark.isFavorite){
+                    if(!self.userData.showFavoritesOnly || landmark.isFavorite){
                         NavigationLink(destination: LandmarkDetail(landmark: landmark)){
                             LandmarkRow(landmark: landmark)
                         }
@@ -46,6 +50,6 @@ struct LandmarkList: View {
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
-            LandmarkList()
+        LandmarkList().environmentObject(UserData())
     }
 }
