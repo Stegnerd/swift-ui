@@ -13,6 +13,7 @@ import CoreLocation
 
 // this is an array of Landmark
 let landmarkData: [Landmark] = load("landmarkData.json")
+let hikeData: [Hike] = load("hikeData.json")
 
 // takes in a generic that can be deserialized and returns generic
 // for example above it takes in a json file string name and returns
