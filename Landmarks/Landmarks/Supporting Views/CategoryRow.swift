@@ -23,7 +23,12 @@ struct CategoryRow: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 0) {
                     ForEach(self.items) {landmark in
-                        CategoryItem(landmark: landmark)
+                        // go to the detail of the landmark
+                        NavigationLink(destination: LandmarkDetail(landmark: landmark)){
+                            // this acts like the button for the navigation link
+                            CategoryItem(landmark: landmark)
+                        }
+                        
                     }
                 }
             }.frame(height: 185)
@@ -37,10 +42,12 @@ struct CategoryItem: View {
     var body: some View {
         VStack(alignment: .leading){
             landmark.image
+                .renderingMode(.original)
                 .resizable()
                 .frame(width: 155, height: 155)
                 .cornerRadius(5)
             Text(landmark.name)
+                .foregroundColor(.primary)
                 .font(.caption)
         }
         .padding(.leading, 15)
@@ -53,7 +60,7 @@ struct CategoryRow_Previews: PreviewProvider {
             // raw value is used to get the string value of the enum
             categoryName: landmarkData[0].category.rawValue,
             items: Array(landmarkData.prefix(4))
-        )
+        ).environmentObject(UserData())
     }
 }
 
