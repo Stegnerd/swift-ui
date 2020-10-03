@@ -45,6 +45,7 @@
 		E7929B3A252815C300145984 /* CategoryHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7929B39252815C300145984 /* CategoryHome.swift */; };
 		E79A84E525254C26000C1843 /* charleyrivers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E79A84E425254C26000C1843 /* charleyrivers.jpg */; };
 		E79A84E825254FB6000C1843 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A84E725254FB6000C1843 /* UserData.swift */; };
+		E7F4E5382528E75F0038D701 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4E5372528E75F0038D701 /* CategoryRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		E7929B39252815C300145984 /* CategoryHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHome.swift; sourceTree = "<group>"; };
 		E79A84E425254C26000C1843 /* charleyrivers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = charleyrivers.jpg; sourceTree = "<group>"; };
 		E79A84E725254FB6000C1843 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		E7F4E5372528E75F0038D701 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				E781E1D825256D5500EEC94E /* RotatedBadgeSymbol.swift */,
 				E745FB142526AF1B00C7A67F /* HikeGraph.swift */,
 				E745FB172526B1BB00C7A67F /* GraphCapsule.swift */,
+				E7F4E5372528E75F0038D701 /* CategoryRow.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7F4E5382528E75F0038D701 /* CategoryRow.swift in Sources */,
 				E781E1D02525652A00EEC94E /* HexagonParameters.swift in Sources */,
 				E7929B3A252815C300145984 /* CategoryHome.swift in Sources */,
 				E745FB152526AF1B00C7A67F /* HikeGraph.swift in Sources */,

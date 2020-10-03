@@ -23,7 +23,10 @@ struct CategoryHome: View {
         NavigationView {
             List{
                 ForEach(categories.keys.sorted(), id: \.self ){ key in
-                    Text(key)
+                    // ! is using forced unwrapping, which means we know this has a value
+                    // if it doesn't throw runtime error. like kotlin !!.
+                    // https://stackoverflow.com/questions/24018327/what-does-an-exclamation-mark-mean-in-the-swift-language
+                    CategoryRow(categoryName: key, items: self.categories[key]!)
                 }
             }
             .navigationBarTitle(Text("Featured"))
