@@ -16,5 +16,6 @@ final class UserData: ObservableObject {
     // property needs this in order to emitted for the ObservableObject protocol
     @Published var showFavoritesOnly = false
     @Published var landmarks = landmarkData
+    @Published var profile = Profile.default
 }
 

@@ -49,6 +49,7 @@
 		E7D38C2E25290ACC007FD82F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D38C2D25290ACC007FD82F /* Profile.swift */; };
 		E7D38C3125290D83007FD82F /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D38C3025290D83007FD82F /* ProfileSummary.swift */; };
 		E7D38C3425290EEC007FD82F /* HikeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D38C3325290EEC007FD82F /* HikeBadge.swift */; };
+		E7D38C37252919EB007FD82F /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D38C36252919EB007FD82F /* ProfileEditor.swift */; };
 		E7F4E5382528E75F0038D701 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4E5372528E75F0038D701 /* CategoryRow.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		E7D38C2D25290ACC007FD82F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E7D38C3025290D83007FD82F /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
 		E7D38C3325290EEC007FD82F /* HikeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeBadge.swift; sourceTree = "<group>"; };
+		E7D38C36252919EB007FD82F /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		E7F4E5372528E75F0038D701 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +216,7 @@
 			children = (
 				E7D38C2A25290A30007FD82F /* ProfileHost.swift */,
 				E7D38C3025290D83007FD82F /* ProfileSummary.swift */,
+				E7D38C36252919EB007FD82F /* ProfileEditor.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				E7D38C3125290D83007FD82F /* ProfileSummary.swift in Sources */,
 				E75F03BC2521840200AEB2B1 /* Landmark.swift in Sources */,
 				E7281DCC2526CD2C00596946 /* HikeDetail.swift in Sources */,
+				E7D38C37252919EB007FD82F /* ProfileEditor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
