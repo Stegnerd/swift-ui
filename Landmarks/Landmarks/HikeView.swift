@@ -7,9 +7,25 @@
 
 import SwiftUI
 
+// this is an extension for animations, so we do not bloat
+// methods and we can extend the animation here
+extension AnyTransition {
+    static var moveAndFade: AnyTransition {
+        // move: moved the animation towards specified edge
+        // move this animation in, from edge
+        let insertion =  AnyTransition.move(edge: .trailing)
+            .combined(with: .opacity)
+        //
+        let removal = AnyTransition.scale.combined(with: .opacity)
+        
+        // used when the animation for coming in and leaving are different
+        return .asymmetric(insertion: insertion, removal: removal)
+    }
+}
+
 struct HikeView: View {
     var hike: Hike
-    @State private var showDetail = false
+    @State private var showDetail = true
     
     var body: some View {
         VStack {
@@ -27,17 +43,24 @@ struct HikeView: View {
                 Spacer()
 
                 Button(action: {
-                    self.showDetail.toggle()
+                    // this wraps all items in an animation
+                    withAnimation {
+                        self.showDetail.toggle()
+                    }
                 }) {
                     Image(systemName: "chevron.right.circle")
                         .imageScale(.large)
                         .rotationEffect(.degrees(showDetail ? 90 : 0))
+                        .scaleEffect(showDetail ? 1.5 : 1)
                         .padding()
                 }
             }
 
             if showDetail {
                 HikeDetail(hike: hike)
+                    // The default transition is to fade in and out
+                    // this converts it to slide
+                    .transition(.moveAndFade)
             }
         }
     }
