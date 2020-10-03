@@ -19,18 +19,36 @@ struct CategoryHome: View {
         )
     }
     
+    var featured: [Landmark] {
+        landmarkData.filter {$0.isFeatured}
+    }
+    
+    
     var body: some View {
         NavigationView {
             List{
+                FeaturedLandmarks(landmarks: featured)
+                    .scaledToFill()
+                    .frame(height: 200)
+                    .clipped()
+                    .listRowInsets(EdgeInsets())
                 ForEach(categories.keys.sorted(), id: \.self ){ key in
                     // ! is using forced unwrapping, which means we know this has a value
                     // if it doesn't throw runtime error. like kotlin !!.
                     // https://stackoverflow.com/questions/24018327/what-does-an-exclamation-mark-mean-in-the-swift-language
                     CategoryRow(categoryName: key, items: self.categories[key]!)
                 }
+                .listRowInsets(EdgeInsets())
             }
             .navigationBarTitle(Text("Featured"))
         }
+    }
+}
+
+struct FeaturedLandmarks: View {
+    var landmarks: [Landmark]
+    var body: some View {
+        landmarks[0].image.resizable()
     }
 }
 
